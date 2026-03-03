@@ -4,21 +4,21 @@
  */
 
 const library = [
-    { displayDate: "2026-01-19", citeKey: "jacobs1961", graphic: "assets/roanoke-intro.png", theme: "Planning History", summary: "Introduction to the course and the 'Mapping Inequality' of Roanoke, VA." },
-    { displayDate: "2026-01-26", citeKey: "bertaud2018", graphic: "assets/planner-economist.png", theme: "Market vs. Design", summary: "Why study the history of urban planning and merging the visions of economists and planners." },
-    { displayDate: "2026-02-02", citeKey: "simmel1950", graphic: "assets/urban-culture.png", theme: "Urban Culture", summary: "Sidewalk safety and contact, and the 'Peculiar Nature of Cities'." },
-    { displayDate: "2026-02-09", citeKey: "scott1998", graphic: "assets/modernist-menace.png", theme: "High Modernism", summary: "Authoritarian High Modernism vs. Neighborhood Parks and Sidewalk Children." },
-    { displayDate: "2026-02-16", citeKey: "hirt2014", graphic: "assets/capitalist-zoning.png", theme: "Zoning", summary: "Residential zoning and planning the capitalist city." },
-    { displayDate: "2026-02-23", citeKey: "klosterman1985", graphic: "assets/planning-debate.png", theme: "Justifications", summary: "DEBATE 1: Is urban planning even possible?" },
-    { displayDate: "2026-03-02", citeKey: "campbell2010", graphic: "assets/losch-hexagons.png", theme: "Neoliberalism", summary: "Space for planning in a Neoliberal world and the need for aged buildings." },
-    { displayDate: "2026-03-16", citeKey: "fainstein2000", graphic: "assets/just-city.png", theme: "Just City", summary: "Green cities, just cities, and spatial justice." },
-    { displayDate: "2026-03-23", citeKey: "thomas1994", graphic: "assets/theory-action.png", theme: "Race & Planning", summary: "The minority-race planner and the self-destruction of diversity." },
-    { displayDate: "2026-03-30", citeKey: "fischer2000", graphic: "assets/citizen-table.png", theme: "Participation", summary: "DEBATE 2: Is planning anti-democratic?" },
-    { displayDate: "2026-04-06", citeKey: "davidoff1965", graphic: "assets/advocacy-hero.png", theme: "Advocacy", summary: "Advocacy and pluralism in planning." },
-    { displayDate: "2026-04-13", citeKey: "schweitzer2016", graphic: "assets/ethics-compass.png", theme: "Ethics", summary: "Professional and restorative planning ethics." },
-    { displayDate: "2026-04-20", citeKey: "miraftab2009", graphic: "assets/smart-city-chorus.png", theme: "Insurgent Planning", summary: "DEBATE 3: Global perspectives on urban planning." },
-    { displayDate: "2026-04-27", citeKey: "watson2009", graphic: "assets/global-south.png", theme: "Global South", summary: "Seeing from the South and governing urban districts." },
-    { displayDate: "2026-05-04", citeKey: "jacobs1961final", graphic: "assets/jacobs-finale.png", theme: "Complexity", summary: "The kind of problem a city is and review for final papers." }
+    { displayDate: "2026-01-19", citeKey: "jacobs1961", graphic: "assets/week1.png", theme: "Planning History", summary: "Introduction to the course and the 'Mapping Inequality' of Roanoke, VA." },
+    { displayDate: "2026-01-26", citeKey: "bertaud2018", graphic: "assets/week2.png", theme: "Market vs. Design", summary: "Why study the history of urban planning and merging the visions of economists and planners." },
+    { displayDate: "2026-02-02", citeKey: "simmel1950", graphic: "assets/week3.png", theme: "Urban Culture", summary: "Sidewalk safety and contact, and the 'Peculiar Nature of Cities'." },
+    { displayDate: "2026-02-09", citeKey: "scott1998", graphic: "assets/week4.png", theme: "High Modernism", summary: "Authoritarian High Modernism vs. Neighborhood Parks and Sidewalk Children." },
+    { displayDate: "2026-02-16", citeKey: "hirt2014", graphic: "assets/week5.png", theme: "Zoning", summary: "Residential zoning and planning the capitalist city." },
+    { displayDate: "2026-02-23", citeKey: "klosterman1985", graphic: "assets/week6.png", theme: "Justifications", summary: "DEBATE 1: Is urban planning even possible?" },
+    { displayDate: "2026-03-02", citeKey: "campbell2010", graphic: "assets/week7.png", theme: "Neoliberalism", summary: "Space for planning in a Neoliberal world and the need for aged buildings." },
+    { displayDate: "2026-03-16", citeKey: "fainstein2000", graphic: "assets/week8.png", theme: "Just City", summary: "Green cities, just cities, and spatial justice." },
+    { displayDate: "2026-03-23", citeKey: "thomas1994", graphic: "assets/week9.png", theme: "Race & Planning", summary: "The minority-race planner and the self-destruction of diversity." },
+    { displayDate: "2026-03-30", citeKey: "fischer2000", graphic: "assets/week10.png", theme: "Participation", summary: "DEBATE 2: Is planning anti-democratic?" },
+    { displayDate: "2026-04-06", citeKey: "davidoff1965", graphic: "assets/week11.png", theme: "Advocacy", summary: "Advocacy and pluralism in planning." },
+    { displayDate: "2026-04-13", citeKey: "schweitzer2016", graphic: "assets/week12.png", theme: "Ethics", summary: "Professional and restorative planning ethics." },
+    { displayDate: "2026-04-20", citeKey: "miraftab2009", graphic: "assets/week13.png", theme: "Insurgent Planning", summary: "DEBATE 3: Global perspectives on urban planning." },
+    { displayDate: "2026-04-27", citeKey: "watson2009", graphic: "assets/week14.png", theme: "Global South", summary: "Seeing from the South and governing urban districts." },
+    { displayDate: "2026-05-04", citeKey: "jacobs1961final", graphic: "assets/week15.png", theme: "Complexity", summary: "The kind of problem a city is and review for final papers." }
 ];
 
 // 1. Fetch the raw BibTeX string from the data folder
