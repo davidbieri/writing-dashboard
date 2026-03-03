@@ -83,15 +83,33 @@
         document.getElementById('pBar').style.width = pct + "%";
         document.getElementById('pText').innerText = `${pct}% of semester elapsed`;
 
-        // Load Spotlight
+       // Load Spotlight
         const item = library[Math.floor(Math.random() * library.length)];
-        document.getElementById('spotlightContent').innerHTML = `
+        const spotlightDiv = document.getElementById('spotlightContent');
+
+        spotlightDiv.innerHTML = `
             <img src="${item.graphic}" class="spotlight-img" onerror="this.src='https://via.placeholder.com/240x150?text=Graphic+Pending'">
             <div class="ai-box">
-                ${item.summary}
-                <code class="bib-code">${item.bib}</code>
+                <div style="margin-bottom: 10px;">${item.summary}</div>
+                <div style="background: white; border: 1px solid #ddd; padding: 10px; border-radius: 4px; position: relative;">
+                    <code id="bibCode" class="bib-code" style="margin-top:0;">${item.bib}</code>
+                    <button onclick="copyBib()" style="margin-top: 10px; cursor: pointer; background: #2D3B45; color: white; border: none; padding: 5px 10px; border-radius: 3px; font-size: 11px;">
+                        📋 Copy BibTeX
+                    </button>
+                    <span id="copyFeedback" style="display:none; font-size: 11px; color: green; margin-left: 10px;">Copied!</span>
+                </div>
             </div>
         `;
+
+        // Function to copy text to clipboard
+        window.copyBib = function() {
+            const text = document.getElementById('bibCode').innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                const feedback = document.getElementById('copyFeedback');
+                feedback.style.display = 'inline';
+                setTimeout(() => { feedback.style.display = 'none'; }, 2000);
+            });
+        };
     })();
 </script>
 </body>
