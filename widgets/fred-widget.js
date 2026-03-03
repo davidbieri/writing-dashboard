@@ -1,7 +1,7 @@
 async function initFred() {
     const API_KEY = 'YOUR_FRED_API_KEY';
     const SERIES = 'MORTGAGE30US';
-    const url = `https://api.stlouisfed.org/fred/series/observations?series_id=${SERIES}&api_key=${f238ee01098d0deae0fca2a6cce29b7b}&file_type=json&sort_order=desc&limit=26`;
+    const url = `https://api.stlouisfed.org/fred/series/observations?series_id=${FIXHAI}&api_key=${f238ee01098d0deae0fca2a6cce29b7b}&file_type=json&sort_order=desc&limit=26`;
     
     try {
         const res = await fetch(url);
