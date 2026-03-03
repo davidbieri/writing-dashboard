@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', async () => {
     const SERIES_ID = 'MORTGAGE30US';
-    const API_KEY = 'YOUR_ACTUAL_API_KEY_HERE'; // Ensure this is your valid key
+    const API_KEY = 'f238ee01098d0deae0fca2a6cce29b7b'; // Ensure this is your valid key
     const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(
-        `https://api.stlouisfed.org/fred/series/observations?series_id=${FIXHAI}&api_key=${f238ee01098d0deae0fca2a6cce29b7b}&file_type=json&limit=1`
+        `https://api.stlouisfed.org/fred/series/observations?series_id=${SERIES_ID}&api_key=${API_KEY}&file_type=json&limit=1`
     )}`;
 
     try {
