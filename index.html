@@ -2,18 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UAP 5174: Planning Theory & Practice</title>
-    </head>
+    <link rel="stylesheet" href="styles.css">
+</head>
 <body>
-    <div class="card">
-        <div id="target-slot"></div>
-        <div id="fred-slot"></div>
-        <div id="spotlight-slot"></div>
+
+<div class="dashboard-card">
+    <div class="header">
+        <h2 style="margin:0;">UAP 5174: Planning Theory & Practice</h2>
+        <div id="dateTag" style="font-family: monospace; font-size: 13px; margin-top: 10px;"></div>
     </div>
 
-    <script src="widgets/uap5174-logic.js"></script>
-    <script src="widgets/research-spotlight.js"></script>
-    <script src="widgets/fred-widget.js"></script>
+    <div class="widget-section" id="target-slot"></div>
+    <div class="widget-section" id="fred-slot"></div>
+    <div class="widget-section" id="spotlight-slot"></div>
+</div>
+
+<script src="widgets/uap5174-logic.js"></script>
+<script src="widgets/research-spotlight.js"></script>
+<script src="widgets/fred-widget.js"></script>
+
 </body>
 </html>
