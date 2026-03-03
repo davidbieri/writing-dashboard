@@ -3,114 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UAP 5174 Dashboard</title>
-    <style>
-        :root { --vt-maroon: #861F41; --vt-orange: #E87722; --dark-slate: #2D3B45; }
-        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; padding: 10px; background: transparent; }
-        .card { background: white; border: 1px solid #d1d1d1; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); max-width: 750px; margin: auto; }
-        .header { background: var(--dark-slate); color: white; padding: 20px; text-align: center; }
-        .target-section { padding: 30px; text-align: center; background: #fcfcfc; }
-        .target-num { font-size: 72px; font-weight: bold; color: #E00122; line-height: 1; display: block; }
-        .progress-container { margin: 20px auto; width: 85%; background: #e0e0e0; border-radius: 15px; height: 12px; overflow: hidden; }
-        .progress-bar { height: 100%; background: linear-gradient(90deg, #4CAF50, #8BC34A); transition: width 1.5s ease; }
-        .spotlight-box { margin: 20px; padding: 20px; background: #f9f9f9; border-radius: 8px; border: 1px solid #eee; }
-        .spotlight-flex { display: flex; gap: 20px; flex-wrap: wrap; }
-        .spotlight-img { width: 240px; height: auto; border-radius: 6px; border: 1px solid #ddd; object-fit: cover; }
-        .ai-box { flex: 1; min-width: 280px; background: #fdf6e3; padding: 15px; border-left: 4px solid #b58900; font-size: 14px; }
-        .bib-code { display: block; margin-top: 10px; font-size: 11px; font-family: monospace; color: #666; }
-    </style>
-</head>
+    <title>UAP 5174: Planning Theory & Practice</title>
+    </head>
 <body>
-
-<div class="card">
-    <div class="header">
-        <h2 style="margin:0; font-size: 20px;">UAP 5174: Planning Theory & Practice</h2>
-        <div id="dateTag" style="font-size: 13px; margin-top: 8px; opacity: 0.9; font-family: monospace;"></div>
+    <div class="card">
+        <div id="target-slot"></div>
+        <div id="fred-slot"></div>
+        <div id="spotlight-slot"></div>
     </div>
 
-    <div class="target-section">
-        <span style="font-size: 12px; text-transform: uppercase; color: #777;">Daily Writing Target</span>
-        <span id="targetValue" class="target-num">--</span>
-        <div class="progress-container"><div id="pBar" class="progress-bar" style="width: 0%"></div></div>
-        <span id="pText" style="font-size: 12px; color: #666;">Calculating...</span>
-    </div>
-
-    <div class="spotlight-box">
-        <h4 style="margin: 0 0 15px 0; color: var(--dark-slate);">📚 Research Spotlight</h4>
-        <div id="spotlightContent" class="spotlight-flex"></div>
-    </div>
-</div>
-
-<script>
-    (function() {
-        // --- CONFIGURATION ---
-        const CONFIG = {
-            targetWords: 15000,
-            deadline: "2026-05-08",
-            start: "2026-01-19"
-        };
-
-        // --- RESEARCH LIBRARY (Relative paths to your /assets folder) ---
-        const library = [
-            {
-                bib: "@article{bieri2026spatial, title={The Geography of Money}, author={Bieri, David}, year={2026}}",
-                graphic: "assets/monetary-map.png", 
-                summary: "AI SUMMARY: Analyzing the intersection of spatial economics and monetary theory. This highlights how local currencies impact urban resilience."
-            }
-            // Add more objects here as the semester progresses
-        ];
-
-        // --- LOGIC ---
-        const now = new Date();
-        const dLine = new Date(CONFIG.deadline);
-        const sDate = new Date(CONFIG.start);
-
-        // Date Display
-        const dayStr = now.toLocaleDateString('en-GB').replace(/\//g, '-');
-        const weekNum = Math.floor((now - sDate) / (7 * 24 * 60 * 60 * 1000)) + 1;
-        document.getElementById('dateTag').innerText = `${dayStr} (Week ${weekNum > 0 ? weekNum : 'Pre'})`;
-
-        // Target Calculation (Business Days)
-        let bizDays = 0; let tmp = new Date(now);
-        while (tmp <= dLine) {
-            if (tmp.getDay() !== 0 && tmp.getDay() !== 6) bizDays++;
-            tmp.setDate(tmp.getDate() + 1);
-        }
-        document.getElementById('targetValue').innerText = bizDays > 0 ? Math.ceil(CONFIG.targetWords / bizDays).toLocaleString() : "Goal!";
-
-        // Progress
-        const pct = Math.min(Math.max(Math.floor(((now - sDate) / (dLine - sDate)) * 100), 0), 100);
-        document.getElementById('pBar').style.width = pct + "%";
-        document.getElementById('pText').innerText = `${pct}% of semester elapsed`;
-
-       // Load Spotlight
-        const item = library[Math.floor(Math.random() * library.length)];
-        const spotlightDiv = document.getElementById('spotlightContent');
-
-        spotlightDiv.innerHTML = `
-            <img src="${item.graphic}" class="spotlight-img" onerror="this.src='https://via.placeholder.com/240x150?text=Graphic+Pending'">
-            <div class="ai-box">
-                <div style="margin-bottom: 10px;">${item.summary}</div>
-                <div style="background: white; border: 1px solid #ddd; padding: 10px; border-radius: 4px; position: relative;">
-                    <code id="bibCode" class="bib-code" style="margin-top:0;">${item.bib}</code>
-                    <button onclick="copyBib()" style="margin-top: 10px; cursor: pointer; background: #2D3B45; color: white; border: none; padding: 5px 10px; border-radius: 3px; font-size: 11px;">
-                        📋 Copy BibTeX
-                    </button>
-                    <span id="copyFeedback" style="display:none; font-size: 11px; color: green; margin-left: 10px;">Copied!</span>
-                </div>
-            </div>
-        `;
-
-        // Function to copy text to clipboard
-        window.copyBib = function() {
-            const text = document.getElementById('bibCode').innerText;
-            navigator.clipboard.writeText(text).then(() => {
-                const feedback = document.getElementById('copyFeedback');
-                feedback.style.display = 'inline';
-                setTimeout(() => { feedback.style.display = 'none'; }, 2000);
-            });
-        };
-    })();
-</script>
+    <script src="widgets/uap5174-logic.js"></script>
+    <script src="widgets/research-spotlight.js"></script>
+    <script src="widgets/fred-widget.js"></script>
 </body>
 </html>
