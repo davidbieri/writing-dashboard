@@ -2,24 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="master.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UAP 5174: Planning Theory & History Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<div class="dashboard-card">
-    <div class="header">
-        <h2 style="margin:0;">UAP 5174: Planning Theory & Practice</h2>
-        <div id="dateTag" style="font-family: monospace; font-size: 13px; margin-top: 10px;"></div>
+    <div class="dashboard-container">
+        <header>
+            <h1>UAP 5174: Planning Theory & History</h1>
+            <p>Spring 2026 | Prof. David Bieri</p>
+        </header>
+
+        <hr class="vt-divider">
+
+        <section id="spotlight-slot">
+            <p>Loading weekly spotlight...</p>
+        </section>
+
+        <div class="widget-grid">
+            <section class="widget-card" id="fred-widget-slot">
+                <h3>Live Economic Indicators</h3>
+                <div id="fred-data">Loading FRED data...</div>
+            </section>
+
+            <section class="widget-card" id="writing-progress-slot">
+                <h3>Semester Writing Progress</h3>
+                <div id="progress-container">
+                    </div>
+            </section>
+        </div>
     </div>
 
-    <div class="widget-section" id="target-slot"></div>
-    <div class="widget-section" id="fred-slot"></div>
-    <div class="widget-section" id="spotlight-slot"></div>
-</div>
-
-<script src="widgets/uap5174-logic.js"></script>
-<script src="widgets/research-spotlight.js"></script>
-<script src="widgets/fred-widget.js"></script>
+    <script src="widgets/research-spotlight.js"></script>
+    <script src="widgets/fred-widget.js"></script>
+    <script src="widgets/uap5174-logic.js"></script>
 
 </body>
 </html>
