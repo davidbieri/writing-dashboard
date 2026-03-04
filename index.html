@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UAP 5174: Planning Theory & History | Insider Dashboard</title>
-    <link rel="icon" type="image/png" href="favicon.png">
+    <title>UAP 5174: Planning Theory & History | Dashboard</title>
+    <link rel="icon" type="image/png" href="https://www.vt.edu/content/dam/news_vt_edu/email/shared-assets/logos/vt-shield-maroon.png">
     <link rel="stylesheet" href="master.css">
 </head>
-<body class="newsletter-theme">
+<body>
 
     <div class="dashboard-container">
         <header>
@@ -18,24 +18,23 @@
             <p>SPRING 2026 | PROF. DAVID BIERI</p>
         </div>
 
-        <section id="spotlight-slot" class="story-block">
+        <section id="spotlight-slot" class="spotlight-box story-block">
             <p class="loading-text">Fetching weekly theory spotlight...</p>
         </section>
 
-        <section class="story-block notice-bg">
-            <div class="section-label">Market Indicators</div>
-            <div id="fred-data">
-                <p class="loading-text">Loading live FRED data...</p>
+        <div class="widget-grid">
+            <div id="fred-data" class="widget-card">
+                <p class="loading-text">Loading market data...</p>
             </div>
-        </section>
-
-        <section id="writing-progress-slot" class="story-block">
-            <p class="loading-text">Calculating semester writing progress...</p>
-        </section>
+            
+            <div id="writing-progress-slot" class="widget-card">
+                <p class="loading-text">Calculating writing targets...</p>
+            </div>
+        </div>
 
         <footer class="newsletter-footer">
             <p>© 2026 Virginia Polytechnic Institute and State University</p>
-            <p>UAP 5174: Planning Theory & History</p>
+            <p>UAP 5174: Political Space Economy Lab</p>
         </footer>
     </div>
 
