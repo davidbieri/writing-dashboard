@@ -1,54 +1,103 @@
+/* VIRGINIA TECH UAP 5174 - UNIFIED INSIDER THEME */
 :root {
+    /* Brand Palette from VT Insider Extract */
     --vt-maroon: #861F41;
     --vt-orange: #E87722;
-    --academic-gray: #333333;
-    --bg-light: #f8f9fa;
+    --vt-dark-gray: #242424;    /* Matches --neutralDark */
+    --academic-gray: #424242;  /* Matches --neutralPrimary */
+    --bg-light: #f2f2f2;       /* Matches newsletter backdrop */
+    --vt-border: #c0c0c0;      /* Matches dotted dividers */
+    --white: #ffffff;
+    
+    /* Layout Tokens */
+    --radius-m: 4px;
+    --radius-lg: 10px;         /* Rounded corners from Insider images */
+    --container-width: 800px;
 }
 
 body {
     background-color: var(--bg-light);
     color: var(--academic-gray);
-    font-family: 'Garamond', 'Georgia', serif; /* More academic feel */
+    /* Official VT font stack extracted from styles */
+    font-family: 'Segoe UI', 'Segoe UI Web (West European)', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', sans-serif;
     line-height: 1.6;
     margin: 0;
-    padding: 40px;
+    padding: 20px;
 }
 
+/* Centered Newsletter-style Container */
 .dashboard-container {
-    max-width: 1000px;
-    margin: 0 auto;
-    background: white;
-    padding: 40px;
+    max-width: var(--container-width);
+    margin: 20px auto;
+    background: var(--white);
     border-top: 10px solid var(--vt-maroon);
+    border-radius: var(--radius-m);
     box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    overflow: hidden;
 }
 
-/* Spotlight Section (1950s Comic) */
+/* Newsletter-Branded Header */
+header {
+    background-color: var(--vt-dark-gray);
+    padding: 30px;
+    text-align: center;
+}
+
+header img {
+    width: 280px;
+    height: auto;
+}
+
+.newsletter-subhead {
+    text-align: center;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--vt-border);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: var(--vt-maroon);
+}
+
+/* Spotlight Section (Desktop Grid / Mobile Stack) */
 .spotlight-box {
     display: grid;
     grid-template-columns: 320px 1fr;
     gap: 30px;
-    margin-bottom: 40px;
-    padding-bottom: 30px;
-    border-bottom: 1px solid #eee;
+    padding: 40px;
+    border-bottom: 1px dotted var(--vt-border);
 }
 
 .spotlight-img {
     width: 100%;
-    border: 5px solid #000;
+    border: 5px solid #000; /* Classic Comic Frame */
+    border-radius: var(--radius-lg);
     box-shadow: 8px 8px 0px var(--vt-orange);
 }
 
-/* FRED Widget Styling (Restored) */
-.fred-box {
-    background: #eef2f3;
-    border-radius: 8px;
-    border-left: 5px solid var(--vt-maroon);
-    padding: 20px;
-    margin-top: 20px;
+/* Story Block Typography */
+.story-block h1 {
+    font-size: 28px;
+    color: var(--vt-dark-gray);
+    margin-top: 0;
+    line-height: 1.2;
 }
 
-.fred-header {
+/* Widget Grid for FRED and Writing Tracker */
+.widget-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 30px 40px 40px 40px;
+}
+
+.widget-card {
+    background: #f8f9fa;
+    border-radius: var(--radius-m);
+    border-left: 5px solid var(--vt-maroon);
+    padding: 20px;
+}
+
+.fred-header, .section-label {
     font-size: 11px;
     text-transform: uppercase;
     color: #666;
@@ -57,8 +106,34 @@ body {
 }
 
 .fred-value {
-    font-size: 28px;
+    font-size: 32px;
     font-weight: bold;
     color: var(--vt-maroon);
-    font-family: sans-serif;
+}
+
+/* Footer Styling */
+.newsletter-footer {
+    background: var(--vt-dark-gray);
+    color: #f5f5f5;
+    text-align: center;
+    padding: 24px;
+    font-size: 12px;
+}
+
+/* Mobile Responsiveness for iPhone App */
+@media screen and (max-width: 650px) {
+    .spotlight-box, .widget-grid {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+    
+    .dashboard-container {
+        margin: 0;
+        width: 100%;
+    }
+}
+
+.loading-text {
+    font-style: italic;
+    color: #999;
 }
