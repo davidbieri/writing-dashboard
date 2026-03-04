@@ -3,29 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UAP 5174: Planning Theory & History Dashboard</title>
-    <link rel="stylesheet" href="master.css"> 
+    <title>UAP 5174: Planning Theory & History | Insider Dashboard</title>
+    <link rel="stylesheet" href="master.css">
 </head>
-<body>
+<body class="newsletter-theme">
 
     <div class="dashboard-container">
         <header>
-            <h1>UAP 5174: Planning Theory & History</h1>
-            <p>Spring 2026 | Prof. David Bieri</p>
+            <img src="https://www.vt.edu/content/dam/news_vt_edu/email/logos-lockups/virginia-tech/vt-logo-lockup/vt-hrz-white-alt-ol-blk3px.png" alt="Virginia Tech Logo">
         </header>
 
-        <div id="spotlight-slot">
-            <p>Loading weekly theory spotlight...</p>
+        <div class="newsletter-subhead">
+            <p>SPRING 2026 | PROF. DAVID BIERI</p>
         </div>
 
-        <div class="widget-grid">
-            <div id="fred-widget-slot">
-                <div id="fred-data">Loading live market data...</div>
+        <section id="spotlight-slot" class="story-block">
+            <p class="loading-text">Fetching weekly theory spotlight...</p>
+        </section>
+
+        <section class="story-block notice-bg">
+            <div class="section-label">Market Indicators</div>
+            <div id="fred-data">
+                <p class="loading-text">Loading live FRED data...</p>
             </div>
+        </section>
 
-            <div id="writing-progress-slot">
-                </div>
-        </div>
+        <section id="writing-progress-slot" class="story-block">
+            <p class="loading-text">Calculating semester writing progress...</p>
+        </section>
+
+        <footer class="newsletter-footer">
+            <p>© 2026 Virginia Polytechnic Institute and State University</p>
+            <p>UAP 5174: Planning Theory & History</p>
+        </footer>
     </div>
 
     <script src="widgets/research-spotlight.js"></script>
