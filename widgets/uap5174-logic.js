@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const config = { target: 15000, deadline: "2026-05-08" };
+    const config = { target: 5000, deadline: "2026-05-08" };
     const now = new Date();
     const dLine = new Date(config.deadline);
     
