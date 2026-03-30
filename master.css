@@ -58,20 +58,23 @@ header img {
     color: var(--vt-maroon);
 }
 
-/* Spotlight Section (Desktop Grid / Mobile Stack) */
+/* Spotlight Section (Image spans full width) */
 .spotlight-box {
     display: grid;
-    grid-template-columns: 320px 1fr;
-    gap: 30px;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 30px;
     padding: 40px;
     border-bottom: 1px dotted var(--vt-border);
 }
 
 .spotlight-img {
+    grid-column: 1 / -1;
     width: 100%;
     border: 5px solid #000; /* Classic Comic Frame */
     border-radius: var(--radius-lg);
     box-shadow: 8px 8px 0px var(--vt-orange);
+    object-fit: cover;
+    max-height: 400px;
 }
 
 /* Story Block Typography */

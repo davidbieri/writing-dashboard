@@ -54,22 +54,18 @@ async function initSpotlight() {
     const reflectionPrompt = generatePrompt(activeItem.theme);
 
     document.getElementById('spotlight-slot').innerHTML = `
-        <div class="spotlight-box">
-            <div class="spotlight-flex">
-                <img src="${activeItem.graphic}" class="spotlight-img" alt="1950s Comic Style Illustration">
-                <div class="ai-box">
-                    <strong>WEEKLY SPOTLIGHT: ${activeItem.theme}</strong>
-                    <p>${activeItem.summary}</p>
-                    <div class="reflection-generator">
-                        <span style="font-size: 11px; color: var(--vt-orange); font-weight: bold;">REFLECTION PROMPT:</span>
-                        <p style="font-style: italic; margin-top: 5px;">"${reflectionPrompt}"</p>
-                    </div>
-                    <div class="bib-container" style="background: white; padding: 10px; border: 1px solid #ddd; margin-top: 10px;">
-                        <code id="bibCode" style="font-size: 10px; display: block; white-space: pre-wrap;">${fullBib}</code>
-                        <button onclick="copyBib()" style="margin-top: 5px;">Copy BibTeX</button>
-                    </div>
-                </div>
+        <img src="${activeItem.graphic}" class="spotlight-img" alt="1950s Comic Style Illustration">
+        <div class="ai-box">
+            <strong>WEEKLY SPOTLIGHT: ${activeItem.theme}</strong>
+            <p>${activeItem.summary}</p>
+            <div class="reflection-generator">
+                <span style="font-size: 11px; color: var(--vt-orange); font-weight: bold;">REFLECTION PROMPT:</span>
+                <p style="font-style: italic; margin-top: 5px;">"${reflectionPrompt}"</p>
             </div>
+        </div>
+        <div class="bib-container" style="background: white; padding: 10px; border: 1px solid #ddd;">
+            <code id="bibCode" style="font-size: 10px; display: block; white-space: pre-wrap;">${fullBib}</code>
+            <button onclick="copyBib()" style="margin-top: 5px;">Copy BibTeX</button>
         </div>
     `;
 }
